@@ -42,21 +42,38 @@ function mainProgram(event){
     });
     */
 
-    translate(event.message.text, {
-        to : 'en'
-    })
-    .then(res => {
-        if(res.text != event.message.text){
-            const translated = {
-                type : 'text',
-                text : res.text
-            };
-            return client.replyMessage(event.replyToken, translated);
-        }
-    })
-    .catch(err => {
-        console.error(err);
-    });
+    let startTranslation = "mulai terjemahkan";
+    let startStatus = new RegExp(startTranslation, 'i');
+
+    let stopTranslation = "berhenti";
+    let stopStatus = new RegExp(stopTranslation, 'i');
+
+    if(startStatus.test(startTranslation) === true){
+        translate(event.message.text, {
+            to : 'en'
+        })
+        .then(res => {
+            if(res.text != event.message.text){
+                const translated = {
+                    type : 'text',
+                    text : res.text
+                };
+                return client.replyMessage(event.replyToken, translated);
+            }
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    }else if(stopStatus.test(stopTranslation) === true){
+        return client.replyMessage(event.replyToken, {
+            type : 'text',
+            text : 'Oke, i am about to stop translating'
+        });
+    }else{
+        return Promise.resolve(null);
+    }
+    
+    
 }
 
 const port = process.env.PORT || 3000;
