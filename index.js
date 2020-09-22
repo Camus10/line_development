@@ -44,19 +44,19 @@ function mainProgram(event){
 
     translate(event.message.text, {
         to : 'en'
-    }).
-        then(res => {
-            if(res.text != event.message.text){
-                const translated = {
-                    type : 'text',
-                    text : res.text
-                };
-                return client.replyMessage(event.replyToken, translate);
-            }
-        }).
-        catch(err => {
-            console.error(err);
-        });
+    })
+    .then(res => {
+        if(res.text != event.message.text){
+            const translated = {
+                type : 'text',
+                text : res.text
+            };
+            return client.replyMessage(event.replyToken, translated);
+        }
+    })
+    .catch(err => {
+        console.error(err);
+    });
 }
 
 const port = process.env.PORT || 3000;
