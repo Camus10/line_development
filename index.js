@@ -3,7 +3,7 @@ const express = require('express');
 //import * as line from '@line/bot-sdk';
 
 const config = {
-    //channelAccessToken : 'bC4HkYUekVTsyq/+BBA3KxAlt57ZgUiHyqgJ0mTvS2t0umO5NkWJMe1dnluS+sUHdVPIlZ7QOJSMjy4UsfGZYomZRzz1zIidHl2Q7MWjwanyUlJk22y9nQXxAAK7anI1YWBlEoIU8EWLsWpdesq43QdB04t89/1O/w1cDnyilFU=',
+    //channelAccessToken : '7GZRwN1V5s+2GT2mg9Gv/+SXFGl9eq/Y2x0ZgxIQSoJkzOoiSwF6wwU67tRuinKAdVPIlZ7QOJSMjy4UsfGZYomZRzz1zIidHl2Q7MWjwak9Tg4GYSrm/hqKstjVtFlCJv/W3a+dkBZNbXOeCZJMTQdB04t89/1O/w1cDnyilFU=',
     //channelSecret : '6fb35d6f57f7562ee5841ffad4cfd198'
     channelAccessToken : process.env.CHANNEL_ACCESS_TOKEN,
     channelSecret : process.env.CHANNEL_SECRET,
