@@ -1,6 +1,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 //import * as line from '@line/bot-sdk';
+const translate = require('@vitalets/google-translate-api');
 
 const config = {
     //channelAccessToken : '7GZRwN1V5s+2GT2mg9Gv/+SXFGl9eq/Y2x0ZgxIQSoJkzOoiSwF6wwU67tRuinKAdVPIlZ7QOJSMjy4UsfGZYomZRzz1zIidHl2Q7MWjwak9Tg4GYSrm/hqKstjVtFlCJv/W3a+dkBZNbXOeCZJMTQdB04t89/1O/w1cDnyilFU=',
@@ -33,11 +34,32 @@ function mainProgram(event){
     if(event.type !== 'message' || event.message.type !== 'text'){
         return Promise.resolve(null);   // ignore message
     }
+
+    /*
     return client.replyMessage(event.replyToken, {
         type : 'text',
         text : 'Hello world'
     });
+    */
+
+    translate(event.message.text, {
+        to : 'en'
+    }).
+        then(res => {
+            if(res.text != event.message.text){
+                const translated = {
+                    type : 'text',
+                    text : res.text
+                };
+                return client.replyMessage(event.replyToken, translate);
+            }
+        }).
+        catch(err => {
+            console.error(err);
+        });
 }
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {});
+app.listen(port, () => {
+    console.log(`Listening on ${port}`);
+});
