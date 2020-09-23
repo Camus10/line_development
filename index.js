@@ -53,7 +53,7 @@ function mainProgram(event){
     }
     */
     
-    translated(event.message.text, {
+    translate(event.message.text, {
             to : 'en'
         })
         .then(res => {
