@@ -51,7 +51,7 @@ function mainProgram(event){
             text : 'Let\'s get started'
         });
 
-        translated(event.message.text, {
+        translate(event.message.text, {
             to : 'en'
         })
         .then(res => {
