@@ -53,7 +53,7 @@ function mainProgram(event){
     }
     */
     let statusActive;
-    const echo
+    const echo;
     if(event.message.text == "start"){
         client.replyMessage(event.replyToken, {
             type : 'text',
