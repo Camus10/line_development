@@ -52,11 +52,12 @@ function mainProgram(event){
         });
     }
     */
-    let statusActive;
+    let statusActive = false;
     if(event.message.text == "mulai"){
-        statusActive = true;
-    }else{
-        statusActive = false;
+        return statusActive = true;
+    }
+    if(event.message.text == "berhenti"){
+        return statusActive = false;
     };
     
     translate(event.message.text, {
