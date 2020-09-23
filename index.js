@@ -54,17 +54,17 @@ function mainProgram(event){
     */
     let statusActive;
     if(event.message.text == "mulai"){
-        statusActive = true;
+        res.statusActive = true;
         return client.replyMessage(event.replyToken, {
             type : 'text',
             text : 'Let\'s get started'
         });
     }
     
-    const echo = { type: 'text', text : statusActive };
-
-  // use reply API
-  return client.replyMessage(event.replyToken, echo);
+    return client.replyMessage(event.replyToken, {
+        type : 'text',
+        text : statusActive
+    });
     
     translate(event.message.text, {
             to : 'en'
