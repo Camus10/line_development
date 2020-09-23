@@ -55,15 +55,12 @@ function mainProgram(event){
     let statusActive;
     if(event.message.text == "start"){
         statusActive = true;
-        return client.replyMessage(event.replyToken, {
-            type : 'text',
-            text : 'Let\'s get started'
-        });
-    }
-    const echo = { type: 'text', text : statusActive };
+        const echo = { type: 'text', text : statusActive };
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
+    }
+    
     
     translate(event.message.text, {
             to : 'en'
