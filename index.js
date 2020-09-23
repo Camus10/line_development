@@ -42,39 +42,17 @@ function mainProgram(event){
     });
     */
 
-    
+    /*
     if(event.message.text == "start"){
         let statusActive = true;
-
-        client.replyMessage(event.replyToken, {
-            type : 'text',
-            text : 'Let\'s get started'
-        });
-
-        translate(event.message.text, {
-            to : 'en'
-        })
-        .then(res => {
-            if((res.text != event.message.text) && (statusActive)){
-                const translated = {
-                    type : 'text',
-                    text : res.text
-                };
-                return client.replyMessage(event.replyToken, translated);
-            }
-        })
-        .catch(err => {
-            console.error(err);
-        });
-
     }else if(event.message.text == "stop"){
         return client.replyMessage(event.replyToken, {
             type : 'text',
             text : 'Oke, i am about to sleeping'
         });
     }
-
-    /*
+    */
+    
     translated(event.message.text, {
             to : 'en'
         })
@@ -90,7 +68,7 @@ function mainProgram(event){
         .catch(err => {
             console.error(err);
         });
-    */
+    
     
 }
 
