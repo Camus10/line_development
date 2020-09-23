@@ -43,7 +43,19 @@ function mainProgram(event){
     */
 
     if(event.message.text == "mulai"){
-        translated(event.message.text, {
+        return client.replyMessage(event.replyToken, {
+            type : 'text',
+            text : 'Let\'s get started'
+        });
+    }else{
+        return client.replyMessage(event.replyToken, {
+            type : 'text',
+            text : 'Oke, i am about to sleeping'
+        });
+    }
+
+    /*
+    translated(event.message.text, {
             to : 'en'
         })
         .then(res => {
@@ -58,8 +70,7 @@ function mainProgram(event){
         .catch(err => {
             console.error(err);
         });
-    }
-
+    */
     
 }
 
