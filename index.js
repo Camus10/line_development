@@ -53,7 +53,7 @@ function mainProgram(event){
     }
     */
     let statusActive;
-    let trigger = "mulai";
+    let trigger = { type: 'text', text : 'mulai' };
     if(event.message.text == trigger){
         statusActive = true;
         return client.replyMessage(event.replyToken, {
