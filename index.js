@@ -57,7 +57,7 @@ function mainProgram(event){
         statusActive = true;
         
     };
-    return client.replyMessage(event.replyToken, {
+    client.replyMessage(event.replyToken, {
         type : 'text',
         //text : 'Let\'s get started',
         text : statusActive
