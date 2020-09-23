@@ -42,12 +42,29 @@ function mainProgram(event){
     });
     */
 
-    if(event.message.text == "mulai"){
-        return client.replyMessage(event.replyToken, {
+    if(event.message.text == "start"){
+        client.replyMessage(event.replyToken, {
             type : 'text',
             text : 'Let\'s get started'
         });
-    }else{
+
+        translated(event.message.text, {
+            to : 'en'
+        })
+        .then(res => {
+            if(res.text != event.message.text){
+                const translated = {
+                    type : 'text',
+                    text : res.text
+                };
+                return client.replyMessage(event.replyToken, translated);
+            }
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
+    }else if(event.message.text == "stop"){
         return client.replyMessage(event.replyToken, {
             type : 'text',
             text : 'Oke, i am about to sleeping'
