@@ -57,11 +57,12 @@ function mainProgram(event){
         res.statusActive = true;
         return client.replyMessage(event.replyToken, {
             type : 'text',
-            text : 'Let\'s get started'
+            text : 'Let\'s get started',
+            text : statusActive
         });
     }
     
-    return client.replyMessage(event.replyToken, {
+    client.replyMessage(event.replyToken, {
         type : 'text',
         text : statusActive
     });
