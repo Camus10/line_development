@@ -53,20 +53,25 @@ function mainProgram(event){
     }
     */
     let statusActive;
-    if(event.message.text == "start"){
+    let trigger = "mulai";
+    if(event.message.text == trigger){
         statusActive = true;
-        const echo = { type: 'text', text : statusActive };
+        return client.replyMessage(event.replyToken, {
+            type : 'text',
+            text : 'Let\'s get started'
+        });
+    }
+    
+    const echo = { type: 'text', text : statusActive };
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
-    }
-    
     
     translate(event.message.text, {
             to : 'en'
         })
         .then(res => {
-            if(res.text != event.message.text && (statusActive)){
+            if(res.text != event.message.text && ({ type : 'text', text : statusActive })){
                 const translated = {
                     type : 'text',
                     text : res.text
