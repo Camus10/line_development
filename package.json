@@ -2,7 +2,7 @@
   "name": "line-development",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "@line/bot-sdk": "^7.0.0",
     "@vitalets/google-translate-api": "^4.0.0",
