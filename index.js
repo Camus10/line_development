@@ -55,12 +55,13 @@ function mainProgram(event){
     let statusActive;
     if(event.message.text == "mulai"){
         statusActive = true;
-        return client.replyMessage(event.replyToken, {
-            type : 'text',
-            //text : 'Let\'s get started',
-            text : statusActive
-        });
-    }
+        
+    };
+    return client.replyMessage(event.replyToken, {
+        type : 'text',
+        //text : 'Let\'s get started',
+        text : statusActive
+    });
     
     translate(event.message.text, {
             to : 'en'
