@@ -52,19 +52,12 @@ function mainProgram(event){
         });
     }
     */
-    let statusActive = false;
-    if(event.message.text == "mulai"){
-        statusActive = true;
-    }
-    if(event.message.text == "berhenti"){
-        statusActive = false;
-    };
     
     translate(event.message.text, {
             to : 'en'
         })
         .then(res => {
-            if(res.text != event.message.text && ({ type : 'text', text : statusActive})){
+            if(res.text != event.message.text){
                 const translated = {
                     type : 'text',
                     text : res.text
