@@ -6,8 +6,8 @@ const translate = require('@vitalets/google-translate-api');
 const config = {
     //channelAccessToken : '7GZRwN1V5s+2GT2mg9Gv/+SXFGl9eq/Y2x0ZgxIQSoJkzOoiSwF6wwU67tRuinKAdVPIlZ7QOJSMjy4UsfGZYomZRzz1zIidHl2Q7MWjwak9Tg4GYSrm/hqKstjVtFlCJv/W3a+dkBZNbXOeCZJMTQdB04t89/1O/w1cDnyilFU=',
     //channelSecret : '6fb35d6f57f7562ee5841ffad4cfd198'
-    channelAccessToken : process.env.CHANNEL_ACCESS_TOKEN || '7GZRwN1V5s+2GT2mg9Gv/+SXFGl9eq/Y2x0ZgxIQSoJkzOoiSwF6wwU67tRuinKAdVPIlZ7QOJSMjy4UsfGZYomZRzz1zIidHl2Q7MWjwak9Tg4GYSrm/hqKstjVtFlCJv/W3a+dkBZNbXOeCZJMTQdB04t89/1O/w1cDnyilFU=',
-    channelSecret : process.env.CHANNEL_SECRET || '6fb35d6f57f7562ee5841ffad4cfd198',
+    channelAccessToken : process.env.CHANNEL_ACCESS_TOKEN,
+    channelSecret : process.env.CHANNEL_SECRET,
 };
 
 const client = new line.Client(config);
