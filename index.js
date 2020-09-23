@@ -64,7 +64,7 @@ function mainProgram(event){
             to : 'en'
         })
         .then(res => {
-            if(res.text != event.message.text && (statusActive == true)){
+            if(res.text != event.message.text && ({ type : 'text', text : statusActive})){
                 const translated = {
                     type : 'text',
                     text : res.text
