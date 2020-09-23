@@ -60,10 +60,10 @@ function mainProgram(event){
             text : 'Let\'s get started'
         });
 
-        echo = { statusActive };
-        return client.replyMessage(event.replyToken, echo);
+        //echo = { statusActive };
+        //return client.replyMessage(event.replyToken, echo);
+
     }
-    client.replyMessage(event.replyToken, echo);
     
     translate(event.message.text, {
             to : 'en'
