@@ -42,14 +42,8 @@ function mainProgram(event){
     });
     */
 
-    let startTranslation = "mulai terjemahkan";
-    let startStatus = new RegExp(startTranslation, 'i');
-
-    let stopTranslation = "berhenti";
-    let stopStatus = new RegExp(stopTranslation, 'i');
-
-    if(startStatus.test(startTranslation) === true){
-        translate(event.message.text, {
+    if(event.message.text == "mulai"){
+        translated(event.message.text, {
             to : 'en'
         })
         .then(res => {
@@ -64,15 +58,8 @@ function mainProgram(event){
         .catch(err => {
             console.error(err);
         });
-    }else if(stopStatus.test(stopTranslation) === true){
-        return client.replyMessage(event.replyToken, {
-            type : 'text',
-            text : 'Oke, i am about to stop translating'
-        });
-    }else{
-        return Promise.resolve(null);
     }
-    
+
     
 }
 
