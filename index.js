@@ -54,17 +54,17 @@ function mainProgram(event){
     */
     let statusActive = false;
     if(event.message.text == "mulai"){
-        return statusActive = true;
+        statusActive = true;
     }
     if(event.message.text == "berhenti"){
-        return statusActive = false;
+        statusActive = false;
     };
     
     translate(event.message.text, {
             to : 'en'
         })
         .then(res => {
-            if(res.text != event.message.text && ({ type : 'text', text : statusActive })){
+            if(res.text != event.message.text && (statusActive == true)){
                 const translated = {
                     type : 'text',
                     text : res.text
