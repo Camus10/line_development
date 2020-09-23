@@ -52,12 +52,20 @@ function mainProgram(event){
         });
     }
     */
+    let statusActive;
+    if(event.message.text == "start"){
+        statusActive = true;
+        return client.replyMessage(event.replyToken, {
+            type : 'text',
+            text : 'Let\'s get started'
+        });
+    }
     
     translate(event.message.text, {
             to : 'en'
         })
         .then(res => {
-            if(res.text != event.message.text){
+            if(res.text != event.message.text && (statusActive)){
                 const translated = {
                     type : 'text',
                     text : res.text
