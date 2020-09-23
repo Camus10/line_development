@@ -54,11 +54,11 @@ function mainProgram(event){
     */
     let statusActive;
     if(event.message.text == "start"){
-        statusActive = true;
-        return client.replyMessage(event.replyToken, {
+        client.replyMessage(event.replyToken, {
             type : 'text',
             text : 'Let\'s get started'
         });
+        return statusActive = true;
     }
     
     translate(event.message.text, {
