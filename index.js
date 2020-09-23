@@ -52,7 +52,7 @@ function mainProgram(event){
         });
     }
     */
-    let statusActive = false;
+    let statusActive;
     if(event.message.text == "start"){
         client.replyMessage(event.replyToken, {
             type : 'text',
