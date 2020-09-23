@@ -44,7 +44,7 @@ function mainProgram(event){
 
     
     if(event.message.text == "start"){
-        let statusActive = 1;
+        let statusActive = true;
 
         client.replyMessage(event.replyToken, {
             type : 'text',
@@ -55,7 +55,7 @@ function mainProgram(event){
             to : 'en'
         })
         .then(res => {
-            if((res.text != event.message.text) && (statusActive = 1)){
+            if((res.text != event.message.text) && (statusActive)){
                 const translated = {
                     type : 'text',
                     text : res.text
