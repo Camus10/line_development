@@ -53,13 +53,17 @@ function mainProgram(event){
     }
     */
     let statusActive;
+    const echo
     if(event.message.text == "start"){
         client.replyMessage(event.replyToken, {
             type : 'text',
             text : 'Let\'s get started'
         });
-        return statusActive = true;
+
+        echo = { statusActive };
+        return client.replyMessage(event.replyToken, echo);
     }
+    client.replyMessage(event.replyToken, echo);
     
     translate(event.message.text, {
             to : 'en'
